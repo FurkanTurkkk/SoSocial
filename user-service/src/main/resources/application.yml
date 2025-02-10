@@ -1,0 +1,11 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: user-service
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: UserProfileDB

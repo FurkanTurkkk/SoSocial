@@ -1,0 +1,17 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: auth-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5432/AuthDB
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+secret:
+  key: dpa36cRLoCmWuH8ugiIPAadYBAGsu9m4ceaJDj0aLefgkPd90ZT/sS384VA3BcpEiwPWv6bJ43FSwlradOAnDYsXcFGS/zMLivGeQS4zbS4BO6ZpsipUJzV2yDl/9D2KCBGT6Vv/b5K6Xjt0t+idzkme6Jdcybgv2J9iI8fCAdS+bijFOUmAD+JIHaVoTQjao/I6p97VWCru4Yr+QHOqt+SyFvbTZEPv3buerF7XM0k/W78TtlrWUtQABDUwQlfBx6DmbxtFN2L7RfmZIraHYbiSSlA/ASA5/j5XsK+5tDdPVtVa58HnKNlE/xEPdpLC+lH8EHQpT4TsSA55BGMgRg==
