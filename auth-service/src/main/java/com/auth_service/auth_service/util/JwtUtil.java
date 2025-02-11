@@ -1,6 +1,7 @@
 package com.auth_service.auth_service.util;
 
 
+import com.auth_service.auth_service.model.Auth;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -17,9 +18,10 @@ public class JwtUtil {
     @Value("${secret.key}")
     private String secretKey;
 
-    public String generateToken(String username){
+    public String generateToken(Auth auth){
         return Jwts.builder()
-                .subject(username)
+                .subject(auth.getUsername())
+                .claim("authId", auth.getId())
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis()+1000*60*60*10))
                 .signWith(getSignKey(),SignatureAlgorithm.HS256)

@@ -52,6 +52,12 @@
 			<version>${jwt.version}</version>
 		</dependency>
 
+		<!-- Spring Cloud Client -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-client</artifactId>
+		</dependency>
+
 		<!-- Test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

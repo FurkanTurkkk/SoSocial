@@ -28,15 +28,15 @@ public class UserProfile {
     public UserProfile() {
     }
 
-    public UserProfile(String username, String name, String lastname, String email, String phone) {
+    public UserProfile(Long authId, String username, String email) {
+        this.authId = authId;
         this.username = username;
-        this.name = name;
-        this.lastname = lastname;
         this.email = email;
-        this.phone = phone;
         this.isActive = true;
         this.createAt = LocalDate.now();
     }
+
+
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
@@ -50,12 +50,32 @@ public class UserProfile {
         this.twitter = twitter;
     }
 
+    public void setAuthId(Long authId) {
+        this.authId = authId;
+    }
+
     public String getId() {
         return id;
     }
 
     public Long getAuthId() {
         return authId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 
     public String getUsername() {
@@ -102,12 +122,12 @@ public class UserProfile {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         UserProfile that = (UserProfile) o;
-        return Objects.equals(email, that.email) && Objects.equals(phone, that.phone);
+        return Objects.equals(email, that.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(email, phone);
+        return Objects.hashCode(email);
     }
 
     public void updateEmail(String email){
@@ -118,11 +138,4 @@ public class UserProfile {
         this.phone = phone;
     }
 
-    public void updateInstagram(String instagram){
-        this.instagram = instagram;
-    }
-
-    public void updateTwitter(String twitter){
-        this.twitter = twitter;
-    }
 }

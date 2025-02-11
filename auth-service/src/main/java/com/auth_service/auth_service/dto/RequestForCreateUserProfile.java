@@ -1,4 +1,4 @@
-package com.user_service.user_service.dto;
+package com.auth_service.auth_service.dto;
 
 public class RequestForCreateUserProfile {
     private String username;
